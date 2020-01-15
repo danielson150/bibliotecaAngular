@@ -1,0 +1,22 @@
+<div *ngIf="emprestimo">
+  <h2>Emprestimo Details</h2>
+  <div><span>usuario: </span>{{emprestimo.usuario}}</div>
+
+  <div>
+    <label>{{emprestimo.livro}}
+      <input [(ngModel)]="emprestimo.usuario" placeholder="usuario"/>
+    </label>
+  </div>
+</div>
+
+<div *ngIf='logado.super == "true"'>
+    <div>
+      <a>Deseja devolver</a>
+      <input [(ngModel)]="emprestimo.devolver" type = "checkbox">
+
+    </div>
+</div>
+
+<button (click)="goBack()">go back</button>
+<button (click)="updateEmprestimo()">save</button>
+<button (click)="deleteEmprestimo()">delete</button>

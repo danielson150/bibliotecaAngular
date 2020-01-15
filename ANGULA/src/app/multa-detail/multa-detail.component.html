@@ -1,0 +1,15 @@
+<div *ngIf="multa">
+  <h2>Emprestimo Details</h2>
+  <div><span>usuario: </span>{{multa.usuario}}</div>
+
+<div *ngIf='logado.super == "true"'>
+    <div>
+      <a>Deseja devolver</a>
+      <input [(ngModel)]="multa.pagar" type = "checkbox">
+
+    </div>
+</div>
+
+<button (click)="goBack()">go back</button>
+<button (click)="updateMulta()">save</button>
+<button (click)="deleteMulta()">delete</button>

@@ -1,0 +1,18 @@
+<h2>Multas</h2>
+
+<ul class="multas">
+  <li *ngFor="let multa of multas">
+    <a routerLink="{{multa.pk}}">
+      <span class="badge">{{multa.pk}}</span> / {{multa.valor}} / {{multa.pagar}}
+    </a>
+  </li>
+</ul>
+
+<div>
+  <div *ngIf="previosPage">
+    <button (click)="previous()">anterior</button>
+  </div>
+  <div  *ngIf="nextPage">
+    <button (click)="next()">proxima</button>
+  </div>
+</div>

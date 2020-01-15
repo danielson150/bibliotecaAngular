@@ -1,0 +1,24 @@
+<div *ngIf="genero">
+  <h2>{{genero.nome | uppercase}} Details</h2>
+  <div><span>id: </span>{{genero.pk}}</div>
+  <div><span>nome: </span>{{genero.nome}}</div>
+  <div>
+    <label>titulo:
+      <input [(ngModel)]="genero.nome" placeholder="nome"/>
+    </label>
+  </div>
+</div>
+
+<ul>
+  <li *ngFor="let livro of livros">
+    <div *ngIf="livro.genero == genero.nome">
+      <a routerLink="{{livro.pk}}">
+        <span class="badge">{{livro.pk}}</span> {{livro.titulo}}
+      </a>
+    </div>
+  </li>
+</ul>
+
+<button (click)="goBack()">go back</button>
+<button (click)="updateGenero()">save</button>
+<button (click)="deleteGenero()">delete</button>

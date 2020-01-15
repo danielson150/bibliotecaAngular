@@ -1,0 +1,27 @@
+<div *ngIf="livro">
+  <h2>{{livro.titulo | uppercase}} Details</h2>
+  
+  <div *ngIf="logado.super == 'false'">
+    <span>nome: {{livro.titulo}} </span>
+    <span>genero: {{livro.genero}} </span>
+    <span>autor: {{livro.autor}}</span>
+    <span>editora: {{livro.editora}}</span>
+    <span>ano_lancamento: {{livro.ano_lancamento}}</span>
+    <span>quantidade: {{livro.quantidade}}</span>
+  </div>
+
+  <div *ngIf="logado.super == 'true'">
+    <label>titulo:
+      <input [(ngModel)]="livro.titulo" placeholder="titulo"/>
+      <input [(ngModel)]="livro.genero" placeholder="genero"/>
+      <input [(ngModel)]="livro.autor" placeholder="autor"/>
+      <input [(ngModel)]="livro.editora" placeholder="editora"/>
+      <input [(ngModel)]="livro.ano_lancamento" placeholder="ano_lancamento"/>
+      <input [(ngModel)]="livro.editora" placeholder="quantidade"/>
+    </label>
+  </div>
+</div>
+<button (click)="goBack()">go back</button>
+<button (click)="updateLivro()">save</button>
+<button (click)="deleteLivro()">delete</button>
+

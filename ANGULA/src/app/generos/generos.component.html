@@ -1,0 +1,60 @@
+<h2>Generos</h2>
+
+<div *ngIf='logado.super == "true"'>
+  <label>Novo Genero:
+    <input [(ngModel)]="genero.nome" placeholder="nome"/>
+    <input [(ngModel)]="genero.descricao" placeholder="descricao"/>
+    </label>
+  <button (click)="addGenero()">add</button>
+</div>
+
+<div>
+  <a> Ordenar por : </a>
+  <select [(ngModel)]="order" >
+    <option value="null">Nenhum</option>
+    <option value="username">Usuario</option>
+    <option value="email">Email</option>
+  </select>
+  <button (click)="crescente()">crescente</button>
+  <button (click)="decrescente()">descrescente</button>
+</div>
+
+<div>
+  <a> Pesquisar por : </a>
+  <input [(ngModel)]="search" placeholder="pesquisar"/>
+</div>
+  
+<div *ngIf='order'>
+  <div *ngIf='order[0] == "-"'><h3>Selecionado Decrescente</h3></div>
+  <div *ngIf='order[0] != "-"'><h3>Selecionado Crescente</h3></div>
+</div>
+
+<div>
+  <button (click)="filtrarGeneros()">Pesquisar</button>
+</div>
+
+<ul class="generos">
+  <li *ngFor="let genero of generos">
+    <a routerLink="{{genero.pk}}">
+      <span class="badge">{{genero.pk}}</span> {{genero.nome}}
+    </a>
+  </li>
+</ul>
+
+<div>
+  <div *ngIf="previosPage">
+    <button (click)="previous()">anterior</button>
+  </div>
+  <div  *ngIf="nextPage">
+    <button (click)="next()">proxima</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

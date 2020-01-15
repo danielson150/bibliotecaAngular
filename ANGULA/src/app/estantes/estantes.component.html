@@ -1,0 +1,51 @@
+<h2>Estantes</h2>
+
+<div *ngIf='logado.super == "true"'>
+  <label>Novo Genero:
+    <input [(ngModel)]="estante.espaco_sobrando" placeholder="espaco_sobrando"/>
+    <input [(ngModel)]="estante.genero" placeholder="genero"/>
+  </label>
+  <button (click)="addEstante()">add</button>
+</div>
+
+<div>
+  <a> Ordenar por : </a>
+  <select [(ngModel)]="order" >
+    <option value="null">Nenhum</option>
+    <option value="username">Usuario</option>
+    <option value="email">Email</option>
+  </select>
+  <button (click)="crescente()">crescente</button>
+  <button (click)="decrescente()">descrescente</button>
+</div>
+
+<div>
+  <a> Pesquisar por : </a>
+  <input [(ngModel)]="search" placeholder="pesquisar"/>
+</div>
+  
+<div *ngIf='order'>
+  <div *ngIf='order[0] == "-"'><h3>Selecionado Decrescente</h3></div>
+  <div *ngIf='order[0] != "-"'><h3>Selecionado Crescente</h3></div>
+</div>
+
+<div>
+  <button (click) ="filtrarEstantes()">Pesquisar</button>
+</div>
+
+<ul class="estantes">
+  <li *ngFor="let estante of estantes">
+    <a routerLink="{{estante.pk}}">
+      <span class="badge">{{estante.pk}}</span> {{estante.genero}} / {{estante.numero}}
+    </a>
+  </li>
+</ul>
+
+<div>
+  <div *ngIf="previosPage">
+    <button (click)="previous()">anterior</button>
+  </div>
+  <div  *ngIf="nextPage">
+    <button (click)="next()">proxima</button>
+  </div>
+</div>

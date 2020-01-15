@@ -1,0 +1,30 @@
+<h1>{{ title }}</h1>
+
+<div *ngIf= 'logado.username != null'>
+  
+  <div *ngIf= 'logado.super == "false"'>
+    <nav>
+      <a routerLink="/livros">Livros</a> / <a routerLink="/estantes"> estantes </a> / <a routerLink="/usuarios"> Meu Perfil</a> / 
+      <a routerLink="/emprestimos"> Meus Emprestimo </a> / <a routerLink="/multas"> Minhas multas </a> / <a routerLink="/generos"> Generos </a>
+    </nav>
+  </div>
+  <div *ngIf= 'logado.super == "true"'>
+    <nav>
+      <a routerLink="/livros">Livros</a> / <a routerLink="/estantes"> Estantes </a> / <a routerLink="/usuarios"> Usuarios</a> / <a routerLink="/prateleiras"> Prateleiras</a> / 
+      <a routerLink="/emprestimos"> Emprestimos </a>  / <a routerLink="/multas"> Multas </a> / <a routerLink="/generos"> Generos </a>
+    </nav>
+  </div>
+  <div>
+    <button (click)="deslogar()">deslogar</button>
+  </div>
+</div>
+
+<div *ngIf= 'logado.username == null'>
+  <nav>
+    <a routerLink="/livros">Livros</a> / <a routerLink="/estantes"> estantes </a> /  <a routerLink="/prateleiras"> prateleiras</a> / 
+    <a routerLink="/generos"> generos </a> / <a routerLink="/usuarios"> Login - Sig In</a> / 
+  </nav>
+</div>
+
+<router-outlet></router-outlet>
+<app-messages></app-messages>

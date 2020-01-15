@@ -1,0 +1,30 @@
+<div *ngIf='user.email != ""'>
+  <h2>{{user.first_name}} Details</h2>
+    <div>
+      <label>Nome:
+        <input [(ngModel)]="user.email" placeholder="Email"/>
+        <input [(ngModel)]="user.username" placeholder="Usário"/>
+        <input [(ngModel)]="user.first_name" placeholder="Nome"/>
+        <input [(ngModel)]="user.password" type="password" placeholder="Senha"/>
+      </label>
+    </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="updateUser()">save</button>
+  <button (click)="deleteUser()">delete</button>
+</div>
+
+
+<div *ngIf='superuser.username != ""'>
+
+  <h2>{{superuser.is_active}}</h2>
+
+  <h2>Nome : {{superuser.first_name}} / Usuário : {{superuser.username}}</h2>
+    <div>
+      <a>Desmarcar para desativar usuario:</a>
+      <input [(ngModel)]="superuser.is_active" type = "checkbox">
+
+    </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="updateUser()">save</button>
+  <button (click)="deleteUser()">delete</button>
+</div>

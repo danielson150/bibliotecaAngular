@@ -1,0 +1,79 @@
+<div *ngIf="logado.nome != null">
+  <h1>{{logado.nome}}</h1>
+  
+  <div>
+    <button>
+      <a routerLink="{{logado.pk}}">
+        <span class="badge">Editar</span> -->
+      </a>
+    </button>
+  </div>
+  
+</div>
+
+<div *ngIf='logado.super == "true"'>
+  <div>
+    <a> Ordenar por : </a>
+    <select [(ngModel)]="order" >
+      <option value="null">Nenhum</option>
+      <option value="username">Usuario</option>
+      <option value="email">Email</option>
+    </select>
+    <button (click)="crescente()">crescente</button>
+    <button (click)="decrescente()">descrescente</button>
+  </div>
+
+  <div>
+    <a> Pesquisar por : </a>
+    <input [(ngModel)]="search" placeholder="pesquisar"/>
+  </div>
+  
+  <div *ngIf='order'>
+    <div *ngIf='order[0] == "-"'><h3>Selecionado Decrescente</h3></div>
+    <div *ngIf='order[0] != "-"'><h3>Selecionado Crescente</h3></div>
+  </div>
+
+  <div>
+    <button (click) ="filtrarUsers()">Pesquisar</button>
+  </div>
+
+  <div>
+    <ul class="usuarios">
+      <li *ngFor="let usuario of usuarios">
+        <a routerLink="{{usuario.pk}}">
+          <span class="badge">{{usuario.pk}}</span> {{usuario.username}}
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <div>
+    <div *ngIf="previosPage">
+      <button (click)="previous()">anterior</button>
+    </div>
+    <div  *ngIf="nextPage">
+      <button (click)="next()">proxima</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="logado.nome == null">
+  <div *ngIf="criar==false">
+    <label>Logar:
+      <input [(ngModel)]="user.username" placeholder="Nome"/>
+      <input [(ngModel)]="user.password" type="password" placeholder="Password"/>
+      <button (click)="loginUser()">logar</button>
+      <button (click)="criarUser()">Não possui uam conta?</button>
+    </label>
+  </div>
+  <div *ngIf="criar==true">
+    <label>Novo Usuario:
+      <input [(ngModel)]="user.email" placeholder="Email"/>
+      <input [(ngModel)]="user.first_name" placeholder="Nome"/>
+      <input [(ngModel)]="user.username" placeholder="Usúario"/>
+      <input [(ngModel)]="user.password" placeholder="Password"/>
+      <button (click)="addUser()">Criar</button>
+      <button (click)="logarUser()">Ja possui uam conta?</button>
+    </label>
+  </div>
+</div>

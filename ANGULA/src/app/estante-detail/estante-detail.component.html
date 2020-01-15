@@ -1,0 +1,14 @@
+<div *ngIf="estante">
+  <h2>Estantes Details</h2>
+  <div><span>id: </span>{{estante.pk}}</div>
+  <div><span>genero: </span>{{estante.genero}}</div>
+  <div>
+    <label>genero:
+      <input [(ngModel)]="estante.genero" placeholder="genero"/>
+    </label>
+  </div>
+</div>
+<button (click)="goBack()">go back</button>
+<button (click)="updateEstante()">save</button>
+<button (click)="deleteEstante()">delete</button>
+

@@ -1,0 +1,55 @@
+<h2>Livros</h2>
+
+<div *ngIf='logado.super == "true"'>
+  <label>Novo Livro:
+    <input [(ngModel)]="livro.titulo" placeholder="titulo"/>
+    <input [(ngModel)]="livro.genero" placeholder="genero"/>
+    <input [(ngModel)]="livro.autor" placeholder="autor"/>
+    <input [(ngModel)]="livro.editora" placeholder="editora"/>
+    <input [(ngModel)]="livro.ano_lancamento" placeholder="ano lancamento"/>
+    <input [(ngModel)]="livro.quantidade" placeholder="quantidade"/>
+  </label>
+  <button (click)="addLivro()">add</button>
+</div>
+
+<div>
+  <a> Ordenar por : </a>
+  <select [(ngModel)]="order" >
+    <option value="null">Nenhum</option>
+    <option value="username">Usuario</option>
+    <option value="email">Email</option>
+  </select>
+  <button (click)="crescente()">crescente</button>
+  <button (click)="decrescente()">descrescente</button>
+</div>
+
+<div>
+  <a> Pesquisar por : </a>
+  <input [(ngModel)]="search" placeholder="pesquisar"/>
+</div>
+  
+<div *ngIf='order'>
+  <div *ngIf='order[0] == "-"'><h3>Selecionado Decrescente</h3></div>
+  <div *ngIf='order[0] != "-"'><h3>Selecionado Crescente</h3></div>
+</div>
+
+<div>
+  <button (click) ="filtrarLivros()">Pesquisar</button>
+</div>
+
+<ul class="livros">
+  <li *ngFor="let livro of livros">
+    <a routerLink="{{livro.pk}}">
+      <span class="badge">{{livro.pk}}</span> {{livro.titulo}}
+    </a>
+  </li>
+</ul>
+
+<div>
+  <div *ngIf="previosPage">
+    <button (click)="previous()">anterior</button>
+  </div>
+  <div  *ngIf="nextPage">
+    <button (click)="next()">proxima</button>
+  </div>
+</div>

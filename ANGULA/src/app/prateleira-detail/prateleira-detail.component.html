@@ -1,0 +1,14 @@
+<div *ngIf="prateleira">
+  <h2>Prateleira Details</h2>
+  <div><span>id: </span>{{prateleira.pk}}</div>
+  <div><span>posicao: </span>{{prateleira.posicao}}</div>
+  <div><span>posicao: </span>{{prateleira.estante}}</div>
+  <div>
+    <label>posicao:
+      <input [(ngModel)]="prateleira.posicao" placeholder="posicao"/>
+    </label>
+  </div>
+</div>
+<button (click)="goBack()">go back</button>
+<button (click)="updatePrateleira()">save</button>
+<button (click)="deletePrateleira()">delete</button>
