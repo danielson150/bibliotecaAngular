@@ -59,21 +59,47 @@
 
 <div *ngIf="logado.nome == null">
   <div *ngIf="criar==false">
-    <label>Logar:
-      <input [(ngModel)]="user.username" placeholder="Nome"/>
-      <input [(ngModel)]="user.password" type="password" placeholder="Password"/>
-      <button (click)="loginUser()">logar</button>
-      <button (click)="criarUser()">Não possui uam conta?</button>
-    </label>
+    <div class="login-box">
+    <h1>Login</h1>
+    <div class="textbox">
+        <i class="fas fa-user"></i>
+        <input [(ngModel)]="user.username" type="text" placeholder="Usuário">
+    </div>
+  
+    <div class="textbox">
+        <i class="fas fa-lock"></i>
+        <input [(ngModel)]="user.password" type="password" placeholder="Password">
+    </div>
+  
+    <input type="button" class="btn" value="Logar" (click)="loginUser()">
+    <input type="button" class="btn" value="Não possuir uma conta?" (click)="criarUser()">
+
+</div>
   </div>
   <div *ngIf="criar==true">
-    <label>Novo Usuario:
-      <input [(ngModel)]="user.email" placeholder="Email"/>
-      <input [(ngModel)]="user.first_name" placeholder="Nome"/>
-      <input [(ngModel)]="user.username" placeholder="Usúario"/>
-      <input [(ngModel)]="user.password" placeholder="Password"/>
-      <button (click)="addUser()">Criar</button>
-      <button (click)="logarUser()">Ja possui uam conta?</button>
-    </label>
+    <div class="login-box">
+    <h1>Cadastro</h1>
+    <div class="textbox">
+        <i class="fas fa-envelope"></i>
+        <input [(ngModel)]="user.email" type="text" placeholder="Email">
+    </div>
+  
+    <div class="textbox">
+        <i class="fas fa-quote-left"></i>
+        <input [(ngModel)]="user.first_name" placeholder="Nome">
+    </div>
+
+    <div class="textbox">
+        <i class="fas fa-user"></i>
+        <input [(ngModel)]="user.username" placeholder="Usúario">
+    </div>
+
+    <div class="textbox">
+        <i class="fas fa-lock"></i>
+        <input [(ngModel)]="user.password" placeholder="Password">
+    </div>
+  
+    <input type="button" class="btn" value="Criar" (click)="addUser()">
+    <input type="button" class="btn" value="Ja possui uam conta?" (click)="logarUser()">  
   </div>
 </div>

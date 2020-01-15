@@ -3,27 +3,46 @@
 <div *ngIf= 'logado.username != null'>
   
   <div *ngIf= 'logado.super == "false"'>
-    <nav>
-      <a routerLink="/livros">Livros</a> / <a routerLink="/estantes"> estantes </a> / <a routerLink="/usuarios"> Meu Perfil</a> / 
-      <a routerLink="/emprestimos"> Meus Emprestimo </a> / <a routerLink="/multas"> Minhas multas </a> / <a routerLink="/generos"> Generos </a>
+    <nav class="navbar">
+        <ul>
+            <li><a routerLink="/livros" routerLinkActive="active">Livros</a></li>
+            <li><a routerLink="/estantes" routerLinkActive="active">Estantes</a></li>
+            <li><a routerLink="/usuarios" routerLinkActive="active">Meu Perfil</a></li>
+            <li><a routerLink="/emprestimos" routerLinkActive="active">Meus Emprestimos</a></li>
+            <li><a routerLink="/multas" routerLinkActive="active">Minhas Multas</a></li>
+            <li><a routerLink="/generos" routerLinkActive="active">Generos</a></li>
+        </ul>
     </nav>
   </div>
   <div *ngIf= 'logado.super == "true"'>
-    <nav>
-      <a routerLink="/livros">Livros</a> / <a routerLink="/estantes"> Estantes </a> / <a routerLink="/usuarios"> Usuarios</a> / <a routerLink="/prateleiras"> Prateleiras</a> / 
-      <a routerLink="/emprestimos"> Emprestimos </a>  / <a routerLink="/multas"> Multas </a> / <a routerLink="/generos"> Generos </a>
+    <nav class="navbar">
+        <ul>
+            <li><a routerLink="/livros" routerLinkActive="active">Livros</a></li>
+            <li><a routerLink="/estantes" routerLinkActive="active">Estantes</a></li>
+            <li><a routerLink="/usuarios" routerLinkActive="active">Usuarios</a></li>
+            <li><a routerLink="/prateleiras" routerLinkActive="active">Prateleiras</a></li>
+            <li><a routerLink="/emprestimos" routerLinkActive="active">Emprestimos</a></li>
+            <li><a routerLink="/multas" routerLinkActive="active">Multas</a></li>
+            <li><a routerLink="/generos" routerLinkActive="active">Generos</a></li>
+            <li style="float:right"><a routerLink="" (click)="deslogar()">Logout</a></li>
+        </ul>
     </nav>
+    
   </div>
   <div>
-    <button (click)="deslogar()">deslogar</button>
   </div>
 </div>
 
 <div *ngIf= 'logado.username == null'>
-  <nav>
-    <a routerLink="/livros">Livros</a> / <a routerLink="/estantes"> estantes </a> /  <a routerLink="/prateleiras"> prateleiras</a> / 
-    <a routerLink="/generos"> generos </a> / <a routerLink="/usuarios"> Login - Sig In</a> / 
-  </nav>
+  <nav class="navbar">
+        <ul>
+            <li><a routerLink="/livros" routerLinkActive="active">Livros</a></li>
+            <li><a routerLink="/estantes" routerLinkActive="active">Estantes</a></li>
+            <li><a routerLink="/prateleiras" routerLinkActive="active">Prateleiras</a></li>
+            <li><a routerLink="/generos" routerLinkActive="active">Generos</a></li>
+            <li><a routerLink="/usuarios" routerLinkActive="active">Login e Cadastro</a></li>
+        </ul>
+    </nav>
 </div>
 
 <router-outlet></router-outlet>
