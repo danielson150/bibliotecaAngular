@@ -6,10 +6,6 @@ body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  
-  
-  /* Set a background color that will be displayed
-     while the background image is loading */
   background-color: #105f5b;
 }
 
@@ -74,7 +70,6 @@ body{
   color: #27184f;
 }
 
-/* my css */
 
 .navbar ul {
     list-style-type: none;
@@ -110,7 +105,7 @@ body{
 h2 {
     color: #fff; 
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
     border-bottom: 5px solid #fff;
     display: inline-block;
 }
@@ -123,12 +118,6 @@ h3 {
 .full-width{
     text-align:center
 }
-
-
-
-
-
-/* dashboard */
 
 [class*='col-'] {
   float: left;
@@ -184,27 +173,27 @@ a {
 
 
 
-/* pizzas */
+/* livros */
 
-.pizzas, .managers {
+.livros, .managers {
   list-style-type: none;
   width: 30em;
 }
-.pizzas li, .managers li {
+.livros li, .managers li {
   position: relative;
   cursor: pointer;
-  background-color: #27184f;
+  background-color: #5e0929;
   margin: .5em;
   height: 3em;
 }
 
-.pizzas li:hover, .managers li:hover {
+.livros li:hover, .managers li:hover {
   color: #fff;
   background-color: #27184f;
   left: .2em;
 }
 
-.pizzas a, .managers a {
+.livros a, .managers a {
   color: #fff;
   text-decoration: none;
   position: relative;
@@ -212,11 +201,11 @@ a {
   width: 360px;
 }
 
-.pizzas a:hover, .managers a:hover {
+.livros a:hover, .managers a:hover {
   color:#fff;
 }
 
-.pizzas .badge, .managers .badge {
+.livros .badge, .managers .badge {
   display: inline-block;
   color: #27184f;
   padding: 1em 1em 2em 1em;
@@ -252,60 +241,15 @@ button.delete {
   margin-left: -5em;
 }
 
-.pizza-box, .manager-box, .details {
+.livros-box, .manager-box, .details {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.pizza-form, .manager-form, .detail-box {
+.livro-form, .manager-form, .detail-box {
   width: 450px;
   margin-top: 50px;
   margin-bottom: 100px;
   color: white;
-}
-
-
-/* demands */
-
-.col-1-1 {
-  width: 100%;
-}
-
-.demand-module {
-  padding: 20px;
-  text-align: center;
-  color: #fff;
-  background-color: #27184f;
-  border-radius: 10px;
-  height: 6em;
-}
-
-.demand-left {
-  float: left;
-  font-size: 22px;
-  text-align: left;
-  width: 33%;
-}
-
-.demand-center {
-  float: left;
-  font-size: 22px;
-  text-align: center;
-  width: 34%;
-}
-
-.demand-right {
-  float: left;
-  font-size: 22px;
-  text-align: right;
-  width: 33%;
-}
-
-.price, .total-gain, .total-demands {
-  color: #7CFC00;
-}
-
-.total-gain, .total-demands {
-  font-size: 40px;
 }

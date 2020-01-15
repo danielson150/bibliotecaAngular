@@ -1,0 +1,42 @@
+.multas, .managers {
+    list-style-type: none;
+    width: 20em;
+  }
+  .multas li, .managers li {
+    position: relative;
+    cursor: pointer;
+    background-color: #5e0929;
+    margin: .5em;
+    height: 3em;
+  }
+  
+  .multas li:hover, .managers li:hover {
+    color: #fff;
+    background-color: #27184f;
+    left: .2em;
+  }
+  
+  .multas a, .managers a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    width: 360px;
+  }
+  
+  .multas a:hover, .managers a:hover {
+    color:#fff;
+  }
+  
+  .multas .badge, .managers .badge {
+    display: inline-block;
+    color: #27184f;
+    padding: 1em 1em 2em 1em;
+    background-color:#fff;
+    line-height: 1em;
+    position: relative;
+    height: 1em;
+    min-width: 16px;
+    text-align: center;
+    margin-right: .5em;
+  }

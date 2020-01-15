@@ -80,13 +80,13 @@
     <div class="login-box">
     <h1>Cadastro</h1>
     <div class="textbox">
-        <i class="fas fa-envelope"></i>
-        <input [(ngModel)]="user.email" type="text" placeholder="Email">
-    </div>
-  
-    <div class="textbox">
         <i class="fas fa-quote-left"></i>
         <input [(ngModel)]="user.first_name" placeholder="Nome">
+    </div>
+
+    <div class="textbox">
+        <i class="fas fa-envelope"></i>
+        <input [(ngModel)]="user.email" type="text" placeholder="Email">
     </div>
 
     <div class="textbox">
@@ -100,6 +100,6 @@
     </div>
   
     <input type="button" class="btn" value="Criar" (click)="addUser()">
-    <input type="button" class="btn" value="Ja possui uam conta?" (click)="logarUser()">  
+    <input type="button" class="btn" value="Ja possui uma conta?" (click)="logarUser()">  
   </div>
 </div>

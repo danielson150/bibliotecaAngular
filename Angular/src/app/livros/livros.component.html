@@ -37,6 +37,7 @@
   <button (click) ="filtrarLivros()">Pesquisar</button>
 </div>
 
+
 <ul class="livros">
   <li *ngFor="let livro of livros">
     <a routerLink="{{livro.pk}}">
@@ -44,6 +45,7 @@
     </a>
   </li>
 </ul>
+
 
 <div>
   <div *ngIf="previosPage">

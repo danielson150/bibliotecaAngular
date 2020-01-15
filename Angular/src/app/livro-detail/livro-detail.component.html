@@ -25,3 +25,39 @@
 <button (click)="updateLivro()">save</button>
 <button (click)="deleteLivro()">delete</button>
 
+
+<div *ngIf="livro">
+  <div class="full-width">
+    <h2>{{livro.name | uppercase}} Details</h2>
+  </div>
+
+  <div class="details">
+    <div class="detail-box">
+
+      <div class="textbox">
+          <input [(ngModel)]="livro.titulo" type="text" placeholder="titulo">
+      </div>
+      <div class="textbox">
+          <input [(ngModel)]="livro.genero" type="text" placeholder="genero">
+      </div>
+      <div class="textbox">
+          <input [(ngModel)]="livro.autor" type="text" placeholder="autor">
+      </div>
+      <div class="textbox">
+          <input [(ngModel)]="livro.editora" type="text" placeholder="editora">
+      </div>
+      <div class="textbox">
+          <input [(ngModel)]="livro.ano_lancamento" type="text" placeholder="ano_lancamento">
+      </div>
+      <div class="textbox">
+          <input [(ngModel)]="livro.editora" type="text" placeholder="quantidade">
+      </div>
+    
+      <input type="button" class="btn" value="Go back" (click)="goBack()">
+      <input type="button" class="btn" value="update" (click)="updateLivro()">
+      <input type="button" class="btn" value="delete" (click)="deleteLivro()">
+      
+    </div>
+  </div>
+</div>
+
